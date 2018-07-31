@@ -1,0 +1,20 @@
+---
+- name: "Initialize laptop from scratch"
+  hosts: localhost
+  gather_facts: true
+  connection: local
+
+  # Ask for sudo password
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Sudo password"
+      private: yes
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - { name: update-system, tags: [init, system, update] }
+    - { name: install-packages, tags: [init, system, install] }
+    - { name: zsh, tags: [init, tools, zsh] }
+    - { name: clean-system, tags: [init, system, clean] }

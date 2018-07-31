@@ -1,0 +1,3 @@
+[submodule "plugins/ansible_stdout_compact_logger"]
+	path = plugins/ansible_stdout_compact_logger
+	url = https://github.com/octplane/ansible_stdout_compact_logger

@@ -1,0 +1,2 @@
+- src: ptavares.ansible_role_manage_system
+- src: ptavares.ansible_role_oh_my_zsh
