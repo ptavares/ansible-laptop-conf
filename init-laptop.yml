@@ -14,7 +14,5 @@
     - vars/main.yml
 
   roles:
-    - { name: update-system, tags: [init, system, update] }
-    - { name: install-packages, tags: [init, system, install] }
-    - { name: zsh, tags: [init, tools, zsh] }
-    - { name: clean-system, tags: [init, system, clean] }
+    - { name: ptavares.ansible_role_manage_system, tags: [system, init] }
+    - { name: ptavares.ansible_role_oh_my_zsh, tags:[tools, zsh]}

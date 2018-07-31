@@ -2,7 +2,7 @@
 ##################
 # System
 ##################
-system_update: false
+system_update: true
 system_update_security_only: false
 
 system_packages_install:
@@ -70,3 +70,4 @@ oh_my_zsh_custom_zsh_entries:
   - "alias p='cd ~/projects'"
   - "# Program Shortcuts"
   - "alias gitStoreCredentials='git config credential.helper store'"
+  - "alias vi='vim -O'"
