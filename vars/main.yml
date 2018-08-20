@@ -48,13 +48,11 @@ oh_my_zsh_custom_plugins_info:
   - { url: "https://github.com/Treri/fzf-zsh.git", dir_dest_name: fzf-zsh }
   - { url: "https://github.com/zsh-users/zsh-autosuggestions.git", dir_dest_name: zsh-autosuggestions }
   - { url: "https://github.com/zdharma/fast-syntax-highlighting.git", dir_dest_name: fast-syntax-highlighting }
-  - { url: "https://github.com/chrissicool/zsh-bash.git", dir_dest_name: zsh-bash }
 
 oh_my_zsh_custom_plugins:
   - fzf-zsh
   - zsh-autosuggestions
   - fast-syntax-highlighting
-  - zsh-bash
 
 oh_my_zsh_custom_plugins_command :
   - "$HOME/.oh-my-zsh/custom/plugins/fzf/install --all"
