@@ -12,5 +12,6 @@ git clone https://github.com/ptavares/ansible-laptop-conf.git
 ```
 - Run install script
 ```sh
+cd ansible-laptop-conf/
 ./install.sh
 ```
