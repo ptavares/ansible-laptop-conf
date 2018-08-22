@@ -15,10 +15,10 @@ system_packages_install:
   - network-manager
   - network-manager-openvpn
   - jq
-  - python
-  - python-pip
   - jmtpfs
   - dar
+  - terminator
+  - net-tools
 system_packages_remove:
   - light-locker
   - nano

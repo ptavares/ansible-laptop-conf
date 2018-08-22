@@ -1,0 +1,38 @@
+- name: Install vim
+  package: name=zsh state=present
+  register: installation
+  become: true
+
+- name: Copy custom .vimrc
+  copy: 
+    src: "{{ role_path }}/files/.vimrc"
+    dest: "{{ ansible_env.HOME }}/.vimrc"
+    backup: yes
+    owner: '{{ ansible_user }}'
+
+- name: Create color directory
+  file:
+    path: "{{ ansible_env.HOME }}/.vim/colors"
+    state: directory
+    owner: "{{ ansible_user }}"
+
+- name: Create custom directory
+  file:
+    path: "{{ ansible_env.HOME }}/.vim/custom"
+    state: directory
+    owner: "{{ ansible_user }}"
+
+- name: Checkout molokai colors
+  git:
+    repo: https://github.com/tomasr/molokai.git
+    dest: "{{ ansible_env.HOME }}/.vim/custom/molokai"
+
+- name: "Create symlink to molokai"
+  file:
+    src: "{{ ansible_env.HOME }}/.vim/custom/molokai/colors/molokai.vim"
+    dest: "{{ ansible_env.HOME }}/.vim/colors/molokai.vim"
+    owner: "{{ ansible_user }}"
+    state: link
+
+- name: Launch plugin installation
+  command: vim +PlugInstall +qall
