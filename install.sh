@@ -28,3 +28,4 @@ log "Init system..."
 ansible-playbook -i "localhost," init-laptop.yml --tags "system" -v
 log "Init tools..."
 ansible-playbook -i "localhost," init-laptop.yml --tags "tools" -v
+log "Don't forget to install tmux plugins on first tmux's session with 'prefix + I'"

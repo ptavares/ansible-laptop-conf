@@ -1,10 +1,10 @@
 - name: Install vim
-  package: name=zsh state=present
+  package: name=vim state=present
   register: installation
   become: true
 
 - name: Copy custom .vimrc
-  copy: 
+  copy:
     src: "{{ role_path }}/files/.vimrc"
     dest: "{{ ansible_env.HOME }}/.vimrc"
     backup: yes

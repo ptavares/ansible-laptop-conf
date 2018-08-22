@@ -8,7 +8,6 @@ system_update_security_only: false
 system_packages_install:
   - wget
   - curl
-  - vim
   - p7zip-full
   - p7zip-rar
   - dos2unix
@@ -19,6 +18,9 @@ system_packages_install:
   - dar
   - terminator
   - net-tools
+  - gnome-shell-extensions
+  - gnome-tweak-tool
+
 system_packages_remove:
   - light-locker
   - nano
@@ -69,3 +71,7 @@ oh_my_zsh_custom_zsh_entries:
   - "# Program Shortcuts"
   - "alias gitStoreCredentials='git config credential.helper store'"
   - "alias vi='vim -O'"
+
+### Visual studio code
+# Install last version
+visual_studio_code_version: ''

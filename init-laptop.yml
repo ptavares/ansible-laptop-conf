@@ -17,3 +17,5 @@
     - { name: ptavares.ansible_role_manage_system, tags: [system, init] }
     - { name: ptavares.ansible_role_oh_my_zsh, tags: [tools, zsh] }
     - { name: vim, tags: [tools, vim] }
+    - { name: tmux, tags: [tools, tmux] }
+    - { name: gantsign.visual-studio-code, tags: [tools, vsc] }
