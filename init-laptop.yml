@@ -19,4 +19,4 @@
     - { name: terragrunt, tags: [tools, terragrunt] }
     - { name: kubectl, tags: [tools, kubectl] }
     - { name: gantsign.visual-studio-code, tags: [tools, vsc] }
-    - { name: geerlingguy.docker, tags: [tools, docker] }
+    - { name: ptavares.ansible_role_docker, tags: [tools, docker] }
