@@ -1,0 +1,6 @@
+---
+kubectl_install_version: v1.11.2
+kubectl_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubectl_install_version }}/bin/linux/amd64/kubectl"
+kubectl_download_location: /tmp/
+kubectl_execution_path: /usr/local/bin
+kubectl_execution_file_name: kubectl

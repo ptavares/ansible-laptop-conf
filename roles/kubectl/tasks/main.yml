@@ -1,0 +1,20 @@
+---
+- name: Check kubectl Version
+  shell: "kubectl version | grep {{ kubectl_install_version }}"
+  failed_when: False
+  changed_when: False
+  register: current_kubectl_version
+
+- name: "Download kubectl version {{ kubectl_install_version }}"
+  get_url:
+    url: "{{ kubectl_url }}"
+    dest: "{{ kubectl_download_location }}"
+  when: current_kubectl_version.rc != 0
+
+- name: Move kubectl binarie for execution
+  copy:
+    src: "{{ kubectl_download_location }}/{{ kubectl_execution_file_name }}"
+    dest: "{{ kubectl_execution_path }}/{{ kubectl_execution_file_name }}"
+    mode: u+x,g+x,o+x
+  when: current_kubectl_version.rc != 0
+  become: true

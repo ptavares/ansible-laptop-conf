@@ -1,0 +1,7 @@
+---
+terraform_install_version: 0.11.8
+terraform_url: "https://releases.hashicorp.com/terraform/{{ terraform_install_version }}/terraform_{{ terraform_install_version }}_linux_amd64.zip"
+terraform_download_location: /tmp/
+terraform_downloaded_file_name: "terraform_{{ terraform_install_version }}_linux_amd64.zip"
+terraform_execution_path: /usr/local/bin
+terraform_execution_file_name: terraform

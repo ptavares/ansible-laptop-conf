@@ -8,6 +8,7 @@ system_update_security_only: false
 system_packages_install:
   - wget
   - curl
+  - htop
   - p7zip-full
   - p7zip-rar
   - dos2unix
@@ -20,6 +21,10 @@ system_packages_install:
   - net-tools
   - gnome-shell-extensions
   - gnome-tweak-tool
+  - ubuntu-restricted-extras
+  - tlp
+  - tlp-rdw
+  - virtualbox
 
 system_packages_remove:
   - light-locker
@@ -71,7 +76,21 @@ oh_my_zsh_custom_zsh_entries:
   - "# Program Shortcuts"
   - "alias gitStoreCredentials='git config credential.helper store'"
   - "alias vi='vim -O'"
+  - "# AWS login"
+  - "alias logIntoIpponAWS='aws-google-auth -p ippon-admin-aws -d 28800 -I C00lefphs -S 563310275444 -r arn:aws:iam::308846910468:role/role-admin-sre-ops-federated -u ptavares@ippon.fr'"
+  - "# Tools Docker alias"
 
 ### Visual studio code
 # Install last version
 visual_studio_code_version: ''
+
+### Docker
+docker_users:
+    - ptavares
+
+### Terraform
+terraform_install_version: 0.11.8
+### Terragrunt
+terragrunt_install_version: v0.16.7
+### Kubectl
+kubectl_install_version: v1.11.2

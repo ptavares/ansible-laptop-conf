@@ -1,3 +1,4 @@
 roles/ptavares.ansible_role_manage_system
 roles/ptavares.ansible_role_oh_my_zsh
 roles/gantsign.visual-studio-code
+roles/geerlingguy.docker

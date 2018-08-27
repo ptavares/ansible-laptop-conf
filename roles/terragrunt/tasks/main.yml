@@ -1,0 +1,20 @@
+---
+- name: Check Terragrunt Version
+  shell: "terragrunt --version | grep {{ terragrunt_install_version }}"
+  failed_when: False
+  changed_when: False
+  register: current_terragrunt_version
+
+- name: "Download Terragrunt version {{ terragrunt_install_version }}"
+  get_url:
+    url: "{{ terragrunt_url }}"
+    dest: "{{ terragrunt_download_location }}"
+  when: current_terragrunt_version.rc != 0
+
+- name: Move Terragrunt binarie for execution
+  copy:
+    src: "{{ terragrunt_download_location }}/{{ terragrunt_downloaded_file_name }}"
+    dest: "{{ terragrunt_execution_path }}/{{ terragrunt_execution_file_name }}"
+    mode: u+x,g+x,o+x
+  when: current_terragrunt_version.rc != 0
+  become: true
