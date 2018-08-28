@@ -2,4 +2,4 @@ roles/ptavares.ansible_role_manage_system
 roles/ptavares.ansible_role_oh_my_zsh
 roles/ptavares.ansible_role_docker
 roles/gantsign.visual-studio-code
-*.retry
+playbooks/*.retry

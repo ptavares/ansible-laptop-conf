@@ -15,7 +15,7 @@ function installAnsible {
 
 function installReqs {
    log "Install requirements"
-   ansible-galaxy install -r requirements.yml --force
+   ansible-galaxy install -r requirements/requirements.yml --force
    stdout_plugin=./plugins/ansible_stdout_compact_logger
    if [ ! -d "$stdout_plugin" ]; then
      git clone https://github.com/octplane/ansible_stdout_compact_logger.git $stdout_plugin
@@ -25,7 +25,7 @@ function installReqs {
 installAnsible
 installReqs
 log "Init system..."
-ansible-playbook -i "localhost," init-laptop.yml --tags "system" -v
+ansible-playbook playbooks/init-laptop.yml --tags "system"
 log "Init tools..."
-ansible-playbook -i "localhost," init-laptop.yml --tags "tools" -v
+ansible-playbook playbooks/init-laptop.yml --tags "tools"
 log "Don't forget to install tmux plugins on first tmux's session with 'prefix + I'"

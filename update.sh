@@ -5,5 +5,5 @@ function log {
 }
 
 log "Update system"
-ansible-playbook update-laptop.yml --tags "system, manage-system-update, manage-system-clean"
+ansible-playbook playbooks/update-laptop.yml --tags "system, manage-system-update, manage-system-clean"
 

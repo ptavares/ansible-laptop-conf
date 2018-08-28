@@ -73,6 +73,7 @@ oh_my_zsh_custom_zsh_entries:
   - "# File Shortcuts"
   - "alias D='cd ~/Téléchargements'"
   - "alias p='cd ~/projects'"
+  - "alias T='cd ~/tools'"
   - "# Program Shortcuts"
   - "alias gitStoreCredentials='git config credential.helper store'"
   - "alias vi='vim -O'"
