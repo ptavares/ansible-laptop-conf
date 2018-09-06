@@ -25,6 +25,7 @@ system_packages_install:
   - tlp
   - tlp-rdw
   - virtualbox
+  - whois
 
 system_packages_remove:
   - light-locker
@@ -80,18 +81,21 @@ oh_my_zsh_custom_zsh_entries:
   - "# AWS login"
   - "alias logIntoIpponAWS='aws-google-auth -p ippon-admin-aws -d 28800 -I C00lefphs -S 563310275444 -r arn:aws:iam::308846910468:role/role-admin-sre-ops-federated -u ptavares@ippon.fr'"
   - "# Tools Docker alias"
+  - "# kubectl completion"
+  - "if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi"
 
 ### Visual studio code
 # Install last version
 visual_studio_code_version: ''
 
-### Docker
+### Docker : no version specified -> install last version
+### Install docker-compose to last version to
 docker_users:
     - ptavares
 
-### Terraform
-terraform_install_version: 0.11.8
-### Terragrunt
-terragrunt_install_version: v0.16.7
+### Terraform : no version specified -> install last version
+#terraform_install_version: 0.11.8
+### Terragrunt : same for terragrunt
+# terragrunt_install_version: v0.16.7
 ### Kubectl
 kubectl_install_version: v1.11.2

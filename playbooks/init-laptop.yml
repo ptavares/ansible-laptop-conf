@@ -15,7 +15,7 @@
     - { name: ptavares.ansible_role_oh_my_zsh, tags: [tools, zsh] }
     - { name: vim, tags: [tools, vim] }
     - { name: tmux, tags: [tools, tmux] }
-    - { name: terraform, tags: [tools, terraform] }
+    - { name: ptavares.ansible_role_terraform, tags: [tools, terraform] }
     - { name: terragrunt, tags: [tools, terragrunt] }
     - { name: kubectl, tags: [tools, kubectl] }
     - { name: gantsign.visual-studio-code, tags: [tools, vsc] }
