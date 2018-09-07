@@ -11,33 +11,33 @@ function log {
 
 function callPlaybook {
     cd ${SCRIPT_PATH}
-    ansible-playbook playbooks/init-laptop.yml --tags "$1" -v
+    ansible-playbook playbooks/init-laptop.yml --tags "$1" ${*:2}
     cd ${CURRENT_DIR}
 }
 
 case $1 in
-    update)
+    system)
         log "Update system"
-        callPlaybook "manage-system-update, manage-system-clean"
+        callPlaybook "manage-system-update, manage-system-clean" ${*:2}
         ;;
     zshConfig)
         log "Update zsh config"
-        callPlaybook "zsh-install-conf"
+        callPlaybook "zsh-install-conf" ${*:2} 
         ;;
     updateDockerCompose)
         log "Update docker-compose"
-        callPlaybook "docker-install-compose"
+        callPlaybook "docker-install-compose" ${*:2}
         ;;
     updateTerraform)
         log "Update terrafrom"
-        callPlaybook "terraform"
+        callPlaybook "terraform" ${*:2}
         ;;
     updateTerragrunt)
         log "Update terragrunt"
-        callPlaybook "terragrunt"
+        callPlaybook "terragrunt" ${*:2}
         ;;
     *)
-        echo "usage ${0} [update|zshConfig|updateDockerCompose|updateTerraform|updateTerragrunt]"
+        echo "usage ${0} [system|zshConfig|updateDockerCompose|updateTerraform|updateTerragrunt]"
         exit 1
         ;;
 esac
