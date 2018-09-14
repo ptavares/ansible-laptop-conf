@@ -1,0 +1,12 @@
+---
+##################################
+# Check requirements before insall
+##################################
+- name: Ensure dependancies presence's
+  apt:
+    name:
+      - curl
+      - dbus
+      - perl
+      - less
+    state: present

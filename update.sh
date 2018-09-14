@@ -36,8 +36,12 @@ case $1 in
         log "Update terragrunt"
         callPlaybook "terragrunt" ${*:2}
         ;;
+    shellExtension)
+        log "Update shell-extension"
+        callPlaybook "shell-extension" ${*:2}
+        ;;
     *)
-        echo "usage ${0} [system|zshConfig|updateDockerCompose|updateTerraform|updateTerragrunt]"
+        echo "usage ${0} [system|zshConfig|updateDockerCompose|updateTerraform|updateTerragrunt|shellExtension]"
         exit 1
         ;;
 esac

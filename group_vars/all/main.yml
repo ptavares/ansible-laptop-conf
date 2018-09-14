@@ -84,6 +84,16 @@ oh_my_zsh_custom_zsh_entries:
   - "# kubectl completion"
   - "if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi"
 
+
+## Shell Extension install
+shell_extension_items:
+  - {name : "Alternate Tab" , id: 15, shell_version: "" }
+  - {name : "System Monitor" , id: 120, shell_version: "" }
+  - {name : "Dash to Dock" , id: 307, shell_version: "" }
+  - {name : "Workspace Isolate Dash" , id: 887, shell_version: "" }
+  - {name : "Workspace Grid" , id: 484, shell_version: "" }
+  - {name : "Workspace Indicator" , id: 21, shell_version: "" }
+
 ### Visual studio code
 # Install last version
 visual_studio_code_version: ''
@@ -95,7 +105,7 @@ docker_users:
 
 ### Terraform : no version specified -> install last version
 #terraform_install_version: 0.11.8
-### Terragrunt : same for terragrunt
+### Terragrunt : same as terraform
 # terragrunt_install_version: v0.16.7
 ### Kubectl
 kubectl_install_version: v1.11.2
