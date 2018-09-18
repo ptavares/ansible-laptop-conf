@@ -26,6 +26,7 @@ system_packages_install:
   - tlp-rdw
   - virtualbox
   - whois
+  - ipcalc
   # -------------------------------------------------
   # Package for system-monitor gnome shell extension
   # -------------------------------------------------
