@@ -90,6 +90,8 @@ oh_my_zsh_custom_zsh_entries:
   - "# Tools Docker alias"
   - "# kubectl completion"
   - "if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi"
+  - "# List all AWS profiles"
+  - "alias listAwsProfiles=\"grep '^[[]profile' <~/.aws/config | awk '{print $2}' | sed 's/]$//'\""
 
 
 ## Shell Extension install
