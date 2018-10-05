@@ -92,7 +92,9 @@ oh_my_zsh_custom_zsh_entries:
   - "if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi"
   - "# List all AWS profiles"
   - "alias listAwsProfiles=\"grep '^[[]profile' <~/.aws/config | awk '{print $2}' | sed 's/]$//'\""
-
+  - "#Touchscreen alias"
+  - "alias touchscreenOn=\"/usr/bin/xinput enable 'ELAN Touchscreen'\""
+  - "alias touchscreenOff=\"/usr/bin/xinput disable 'ELAN Touchscreen' \""
 
 ## Shell Extension install
 shell_extension_items:
