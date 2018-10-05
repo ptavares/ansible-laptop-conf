@@ -49,7 +49,7 @@ system_clean: true
 
 ## ZSH install
 oh_my_zsh_custom_theme_info: { url: "https://github.com/ptavares/zsh-themes.git", dir_dest_name: zsh-themes }
-oh_my_zsh_custom_theme: ptavares
+oh_my_zsh_custom_theme: custom-agnoster
 
 oh_my_zsh_default_plugins:
   - git
