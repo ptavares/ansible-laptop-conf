@@ -58,6 +58,7 @@ oh_my_zsh_default_plugins:
   - ubuntu
   - aws
   - tmux
+  - tmuxinator
 
 oh_my_zsh_custom_plugins_info:
   - { url: "https://github.com/junegunn/fzf.git", dir_dest_name : fzf }
@@ -75,6 +76,7 @@ oh_my_zsh_custom_plugins_command :
   - "fast-theme safari"
 
 oh_my_zsh_custom_zsh_entries:
+  - "export EDITOR=vim"
   - "# List only directories alias"
   - "alias lsd='ls -l | grep \"^d\"'"
   - "# List by size directories"
