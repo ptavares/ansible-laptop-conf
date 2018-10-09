@@ -27,6 +27,7 @@ system_packages_install:
   - virtualbox
   - whois
   - ipcalc
+  - tmuxinator
   # -------------------------------------------------
   # Package for system-monitor gnome shell extension
   # -------------------------------------------------
