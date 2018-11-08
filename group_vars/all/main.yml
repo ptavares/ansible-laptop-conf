@@ -28,6 +28,7 @@ system_packages_install:
   - whois
   - ipcalc
   - tmuxinator
+  - pwgen
   # -------------------------------------------------
   # Package for system-monitor gnome shell extension
   # -------------------------------------------------
