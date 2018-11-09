@@ -24,24 +24,32 @@ case $1 in
         log "Update zsh config"
         callPlaybook "zsh-install-conf" ${*:2} 
         ;;
-    updateDockerCompose)
+    dockerCompose)
         log "Update docker-compose"
         callPlaybook "docker-install-compose" ${*:2}
         ;;
-    updateTerraform)
+    terraform)
         log "Update terrafrom"
         callPlaybook "terraform" ${*:2}
         ;;
-    updateTerragrunt)
+    terragrunt)
         log "Update terragrunt"
         callPlaybook "terragrunt" ${*:2}
+        ;;
+    kubectl)
+        log "Update Kubectl"
+        callPlaybook "kubectl" ${*:2}
+        ;;
+    docker)
+        log "Update Docker"
+        callPlaybook "docker" ${*:2}
         ;;
     shellExtension)
         log "Update shell-extension"
         callPlaybook "shell-extension" ${*:2}
         ;;
     *)
-        echo "usage ${0} [system|zshConfig|updateDockerCompose|updateTerraform|updateTerragrunt|shellExtension]"
+        echo "usage ${0} [system|zshConfig|dockerCompose|terraform|terragrunt|kubectl|docker|shellExtension]"
         exit 1
         ;;
 esac

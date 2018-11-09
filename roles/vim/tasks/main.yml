@@ -35,4 +35,4 @@
     state: link
 
 - name: Launch plugin installation
-  command: vim +PlugInstall +qall
+  shell: vim +PlugInstall +qall
