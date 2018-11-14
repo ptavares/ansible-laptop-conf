@@ -259,8 +259,8 @@ set -g mode-keys vi
 bind Escape copy-mode
 unbind p
 bind p paste-buffer
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-selection
+#bind-key -t vi-copy 'v' begin-selection
+#bind-key -t vi-copy 'y' copy-selection
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
