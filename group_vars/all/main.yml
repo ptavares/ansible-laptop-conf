@@ -24,6 +24,8 @@ system_packages_install:
   - ubuntu-restricted-extras
   - tlp
   - tlp-rdw
+  - tp-smapi-dkms
+  - acpi-call-dkms
   - virtualbox
   - whois
   - ipcalc
