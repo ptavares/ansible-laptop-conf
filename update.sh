@@ -9,7 +9,7 @@ function log {
     echo `$DATE`" === $1"
 }
 
-function callPlaybook {
+function callplaybook {
     cd ${SCRIPT_PATH}
     ansible-playbook playbooks/init-laptop.yml --tags "$1" ${*:2}
     cd ${CURRENT_DIR}
@@ -17,39 +17,43 @@ function callPlaybook {
 
 case $1 in
     system)
-        log "Update system"
-        callPlaybook "manage-system-update, manage-system-clean" ${*:2}
+        log "update system"
+        callplaybook "manage-system-update, manage-system-clean" ${*:2}
         ;;
-    zshConfig)
-        log "Update zsh config"
-        callPlaybook "zsh-install-conf" ${*:2} 
+    zshconfig)
+        log "update zsh config"
+        callplaybook "zsh-install-conf" ${*:2} 
         ;;
-    dockerCompose)
-        log "Update docker-compose"
-        callPlaybook "docker-install-compose" ${*:2}
+    dockercompose)
+        log "update docker-compose"
+        callplaybook "docker-install-compose" ${*:2}
         ;;
     terraform)
-        log "Update terrafrom"
-        callPlaybook "terraform" ${*:2}
+        log "update terrafrom"
+        callplaybook "terraform" ${*:2}
         ;;
     terragrunt)
-        log "Update terragrunt"
-        callPlaybook "terragrunt" ${*:2}
+        log "update terragrunt"
+        callplaybook "terragrunt" ${*:2}
         ;;
     kubectl)
-        log "Update Kubectl"
-        callPlaybook "kubectl" ${*:2}
+        log "update kubectl"
+        callplaybook "kubectl" ${*:2}
         ;;
     docker)
-        log "Update Docker"
-        callPlaybook "docker" ${*:2}
+        log "update docker"
+        callplaybook "docker" ${*:2}
         ;;
-    shellExtension)
-        log "Update shell-extension"
-        callPlaybook "shell-extension" ${*:2}
+    vsc)
+        log "update visualstudiocode"
+        callplaybook "vsc" ${*:2}
+        ;;
+    shellextension)
+        log "update shell-extension"
+        callplaybook "shell-extension" ${*:2}
         ;;
     *)
-        echo "usage ${0} [system|zshConfig|dockerCompose|terraform|terragrunt|kubectl|docker|shellExtension]"
+        echo "usage ${0} [system|zshconfig|dockercompose|terraform|terragrunt|kubectl|docker|vsc|shellextension]"
         exit 1
         ;;
 esac
