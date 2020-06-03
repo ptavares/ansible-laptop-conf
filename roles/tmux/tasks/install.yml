@@ -1,0 +1,33 @@
+---
+
+- name: Install tmux and tmuxinator
+  package: 
+    name: 
+      - tmux
+      - tmuxinator 
+    state: present
+  register: installation
+  become: true
+
+- name: Copy custom .tmux.conf
+  copy:
+    src: "{{ role_path }}/files/.tmux.conf"
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"
+    backup: yes
+    owner: '{{ ansible_user }}'
+
+- name: Copy custom .tmux.conf.local
+  copy:
+    src: "{{ role_path }}/files/.tmux.conf.local"
+    dest: "{{ ansible_env.HOME }}/.tmux.conf.local"
+    backup: yes
+    owner: '{{ ansible_user }}'
+
+- name: Checkout tmux-plugins-manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+  
+- name: Post-install message
+  debug:
+    msg: "Install tmux plugins on first tmux's session with 'prefix + I'"

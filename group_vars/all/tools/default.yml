@@ -1,0 +1,27 @@
+---
+
+##################
+# Tools
+###################
+
+
+## Shell Extension install
+shell_extension_items:
+  #  - {name : "Alternate Tab" , id: 15, shell_version: "" }
+  # - {name : "System Monitor" , id: 120, shell_version: "" }
+  # - {name : "Dash to Dock" , id: 307, shell_version: "" }
+  # - {name : "Workspace Isolate Dash" , id: 887, shell_version: "" }
+  # - {name : "Workspace Grid" , id: 484, shell_version: "" }
+  # - {name : "Workspace Indicator" , id: 21, shell_version: "" }
+
+### Visual studio code
+# Install last version
+visual_studio_code_version: ''
+
+### Docker : no version specified -> install last version
+### Install docker-compose to last version too
+docker_users:
+    - ptavares
+
+### Kubectl
+# kubectl_install_version: v1.11.2

@@ -1,5 +1,7 @@
 - name: Install vim
-  package: name=vim state=present
+  package: 
+    name: vim 
+    state: present
   register: installation
   become: true
 
@@ -35,4 +37,4 @@
     state: link
 
 - name: Launch plugin installation
-  shell: vim +PlugInstall +qall
+  command: vim +PlugInstall +qall

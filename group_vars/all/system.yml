@@ -1,0 +1,41 @@
+---
+
+##################
+# System
+##################
+system_update: true
+system_update_security_only: false
+
+system_packages_install:
+  - wget
+  - curl
+  - htop
+  - p7zip-full
+  - p7zip-rar
+  - dos2unix
+  - jq
+  - net-tools
+  - gnome-shell-extensions
+  - gnome-tweak-tool
+  - ubuntu-restricted-extras
+  - virtualbox
+  - whois
+  - ipcalc
+  - pwgen
+  # -------------------------------------------------
+  # Package for system-monitor gnome shell extension
+  # -------------------------------------------------
+  - chrome-gnome-shell
+  - gir1.2-gtop-2.0
+  - gir1.2-networkmanager-1.0
+  - gir1.2-clutter-1.0
+
+
+system_packages_remove:
+  - light-locker
+  - nano
+
+system_deb_urls:
+  - "https://prerelease.keybase.io/keybase_amd64.deb"
+
+system_clean: true

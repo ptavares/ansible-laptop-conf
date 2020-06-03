@@ -1,24 +1,14 @@
-- name: Install tmux
-  package: name=tmux state=present
-  register: installation
-  become: true
+---
+# tasks file for tmux
 
-- name: Copy custom .tmux.conf
-  copy:
-    src: "{{ role_path }}/files/.tmux.conf"
-    dest: "{{ ansible_env.HOME }}/.tmux.conf"
-    backup: yes
-    owner: '{{ ansible_user }}'
+# Check requirement before installation
+- include: check-requirements.yml
+  tags:
+    - tmux-install-all
+    - tmux-install-requirements
 
-- name: Copy custom .tmux.conf.local
-  copy:
-    src: "{{ role_path }}/files/.tmux.conf.local"
-    dest: "{{ ansible_env.HOME }}/.tmux.conf.local"
-    backup: yes
-    owner: '{{ ansible_user }}'
-
-- name: Checkout tmux-plugins-manager
-  git:
-    repo: https://github.com/tmux-plugins/tpm.git
-    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
-
+# Install tmux
+- include: install.yml
+  tags:
+    - tmux-install-all
+    - tmux-install-repo
