@@ -6,7 +6,7 @@ sudo apt -y autoremove
 sudo apt update
 
 # Install Python3 & Pip3
-sudo apt install -y software-properties-common
+sudo apt install -y software-properties-common apt-utils
 sudo apt install -y python3-setuptools python3-apt python3-pip
 
 # Install Linter

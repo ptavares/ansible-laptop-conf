@@ -7,6 +7,7 @@ system_update: true
 system_update_security_only: false
 
 system_packages_install:
+  - apt-utils
   - wget
   - curl
   - htop
@@ -27,7 +28,7 @@ system_packages_install:
   # -------------------------------------------------
   - chrome-gnome-shell
   - gir1.2-gtop-2.0
-  - gir1.2-networkmanager-1.0
+  - gir1.2-nm-1.0
   - gir1.2-clutter-1.0
 
 

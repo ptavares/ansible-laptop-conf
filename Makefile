@@ -4,7 +4,7 @@
 # ######################################################################################
 
 # # Default shell to use
-# SHELL=/bin/bash
+SHELL=/bin/bash
 # ========================================
 # COLORS SETUP
 # ========================================
@@ -109,7 +109,7 @@ GALAXY=ansible-galaxy install -r $(REQUIREMENTS_DIR)/$(requirements) $(force)
 	bash scripts/00-fix-path.sh
 	
 	@$(call MESSAGE, Source folder (to ensure initial setup loads this file))
-	source /etc/profile
+	@. /etc/profile
 
 
 .PHONY: bootstrap
@@ -148,8 +148,18 @@ inventory:
 list: env  ?= $(inventory) 
 list: group ?= all
 list: 
-	ansible --inventory-file="$(env)" $(group) --list-hosts
-	
+	@ansible --inventory-file="$(env)" $(group) --list-hosts
+
+.PHONY: list-tasks
+## List playbook tasks and tags
+## Usage             : make list-tasks [playbook=setup]
+## Available args    : 
+##   - playbook      : specify your playbook in $(PLAYBOOK_DIR), default set to $(DEFAULT_PLAYBOOK)
+##   - PLAYBOOK_DIR  : specify your playbook directory
+## 
+list-tasks: playbook ?= $(DEFAULT_PLAYBOOK) 
+list-tasks: 
+	@ansible-playbook $(PLAYBOOK_DIR)/$(playbook) -K --list-tasks
 
 .PHONY: install-roles
 ## Install ansible role dependencies
@@ -189,9 +199,9 @@ dry-run:
 ##   - limit           : Limit the command to a subset of hosts with ansible's limit argument, default <none>
 ##   - diff            : set diff=1 to run command with '--diff' option
 ##
-run-intall: playbook ?= $(DEFAULT_PLAYBOOK)
-run-intall: install-roles 
-run-intall:
+run-install: playbook ?= $(DEFAULT_PLAYBOOK)
+run-install: install-roles 
+run-install:
 	@$(ANSIBLE) 
 
 # =================================================
@@ -202,7 +212,7 @@ run-intall:
 ## Does most eveything with Ansible and Make targets 
 ## Call bellow targets : bootstrap bootstrap-check run non-ansible
 ## You can specify all args available from those targets
-all: bootstrap bootstrap-check run-intall non-ansible
+all: bootstrap bootstrap-check run-install non-ansible
 
 # =================================================
 ## ,.-~*´¨¯¨`*·~-.¸-( Help )-,.-~*´¨¯¨`*·~-.¸
