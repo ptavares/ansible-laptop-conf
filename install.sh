@@ -5,17 +5,22 @@
 # ########################################################
 DIR=tools
 GIT_REPO=ansible-laptop-conf
+GIT_BRANCH=changeToMakefile
 GIT_URL=https://github.com/ptavares/"${GIT_REPO}".git
 
 # ########################################################
 # Functions
 # ########################################################
+bold=$(tput bold)
+lpurple=$(tput -Txterm setaf 4)
+reset=$(tput -Txterm sgr0)
+
 
 ## -------------------------------------------------------
 ## log function
 ## -------------------------------------------------------
 function log {
-    echo `$DATE`" === $1"
+    echo "${lpurple}===${reset} ${bold}${1}${reset} ${lpurple}===${reset}"
 }
 
 function minimalPackage() {
@@ -31,11 +36,11 @@ function checkoutRepo() {
     cd "${DIR}" || exit
     if [ ! -d "${GIT_REPO}" ] ; then
         log "Checkout ansible-laptop-conf repository"
-        git clone "${GIT_URL}" "${GIT_REPO}"
+        git clone -b "${GIT_BRANCH}" "${GIT_URL}" "${GIT_REPO}"
     else
         log "Update ansible-laptop-conf repository"
         cd "${GIT_REPO}"
-        git reset --hard origin/master
+        git reset --hard origin/${GIT_BRANCH}
     fi
 }
 
