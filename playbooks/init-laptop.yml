@@ -9,6 +9,7 @@
 
   roles:
     - { name: ptavares.ansible_role_manage_system, tags: [system, init] }
+    - { name: locales, tags: [locales, init] }
     - { role: fonts, tags: [ extra, fonts ] }
     - { name: tmux, tags: [tools, bash, tmux] }
     - { name: vim, tags: [tools, editor, vim] }

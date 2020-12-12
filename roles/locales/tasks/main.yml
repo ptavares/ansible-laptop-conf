@@ -1,32 +1,19 @@
 ---
-- name: Install ntp
-  package:
-    name: ntp
-    state: present
-  register: installation
-  become: true
 
-- name: Configure locales
-  lineinfile:
-    dest: "/var/lib/locales/supported.d/local regexp={{ item.locale }} {{ item.encoding }}"
-    line: "{{ item.locale }} {{ item.encoding }} create=yes"
-  notify:
-    - Generate locales
-  with_items:
-    - "{{ locales_list }}"
-  become: true
+# Install ntp
+- include: ntp.yml
+  tags:
+    - locales-all
+    - locales-ntp
 
-- name: Set localtime (/etc/localtime)
-  file:
-    src: "/usr/share/zoneinfo/{{ locales_timezone }}"
-    dest: "/etc/localtime"
-    state: link
+# Init locales
+- include: init.yml
+  tags:
+    - locales-all
+    - locales-init
 
-- name: Set timezone (/etc/timezone)
-  copy:
-    content: "{{ locales_timezone }}\n"
-    dest: /etc/timezone
-    mode: u=rw,g=r,o=r
-  notify:
-    - Update TimeZone data
-  become: true
+# Configure locales
+- include: configure.yml
+  tags:
+    - locales-all
+    - locales-config

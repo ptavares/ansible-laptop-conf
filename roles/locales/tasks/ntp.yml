@@ -1,0 +1,10 @@
+---
+##################################
+# Install ntp package
+##################################
+- name: Install ntp
+  package:
+    name: ntp
+    state: present
+  register: installation
+  become: true

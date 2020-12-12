@@ -1,0 +1,19 @@
+---
+######################################
+# Configure locales from configuration
+######################################
+- name: Set localtime (/etc/localtime)
+  file:
+    src: "/usr/share/zoneinfo/{{ locales_timezone }}"
+    dest: "/etc/localtime"
+    state: link
+  become: true
+
+- name: Set timezone (/etc/timezone)
+  copy:
+    content: "{{ locales_timezone }}\n"
+    dest: /etc/timezone
+    mode: u=rw,g=r,o=r
+  notify:
+    - Update TimeZone data
+  become: true

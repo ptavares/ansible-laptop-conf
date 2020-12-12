@@ -1,0 +1,13 @@
+---
+##################################
+# Init locales from configuration
+##################################
+- name: Configure locales
+  lineinfile:
+    dest: "/var/lib/locales/supported.d/local regexp={{ item.locale }} {{ item.encoding }}"
+    line: "{{ item.locale }} {{ item.encoding }} create=yes"
+  notify:
+    - Generate locales
+  with_items:
+    - "{{ locales_list }}"
+  become: true
