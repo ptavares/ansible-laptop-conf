@@ -17,6 +17,6 @@ repos:
   hooks:
     - id: ansible-lint
       files: \.(yaml|yml)$
-      # args: [
-      #   "--exclude=roles",
-      # ]
+      args: [
+        "--exclude=roles_imported",
+      ]
