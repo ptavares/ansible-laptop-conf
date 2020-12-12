@@ -1,7 +1,7 @@
 ---
 
 - name: Install tmux and tmuxinator
-  package: 
+  package:
     name: "{{ item }}"
     state: present
   with_items:
@@ -16,6 +16,7 @@
     dest: "{{ ansible_env.HOME }}/.tmux.conf"
     backup: yes
     owner: '{{ ansible_user }}'
+    mode: u=rw,g=r,o=r
 
 - name: Copy custom .tmux.conf.local
   copy:
@@ -23,12 +24,14 @@
     dest: "{{ ansible_env.HOME }}/.tmux.conf.local"
     backup: yes
     owner: '{{ ansible_user }}'
+    mode: u=rw,g=r,o=r
 
 - name: Checkout tmux-plugins-manager
   git:
     repo: https://github.com/tmux-plugins/tpm.git
     dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
-  
+    version: v3.0.0
+
 - name: Post-install message
   debug:
     msg: "Install tmux plugins on first tmux's session with 'prefix + I'"

@@ -58,4 +58,4 @@ make run-install
 | [manage_system](https://github.com/ptavares/ansible-role-manage-system) | Update system, install a lot of usefull packages (curl, htop, zip,....), remove unused packages and install specific deb files. See [configuration task file](group_vars/all/system.yml) for more information |
 | fonts | Download [nerd-font](https://github.com/ryanoasis/nerd-fonts.git) from git |
 | tmux | Install tmux and tmuxinator with some plugins |
-| vim | Install vim with some plugins and install [molokai](https://github.com/tomasr/molokai.git) theme | 
+| vim | Install vim with some plugins and install [molokai](https://github.com/tomasr/molokai.git) theme |

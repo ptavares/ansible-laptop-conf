@@ -279,7 +279,7 @@ lint:
 
 
 .PHONY: test-with-docker
-## Start a Docker container with volume; so you can change the code directly 
+## Start a Docker container with volume; so you can change the code directly
 test-with-docker:
 	docker container run --rm -it -v ${PWD}:/home/ubuntu/ansible-laptop-conf tavarespatrick/ubuntu-ansible:latest bash
 

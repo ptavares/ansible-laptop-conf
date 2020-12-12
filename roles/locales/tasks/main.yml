@@ -1,14 +1,14 @@
 ---
 - name: Install ntp
-  package: 
+  package:
     name: ntp
     state: present
   register: installation
   become: true
 
 - name: Configure locales
-  lineinfile: 
-    dest: "/var/lib/locales/supported.d/local regexp={{ item.locale }} {{ item.encoding }}" 
+  lineinfile:
+    dest: "/var/lib/locales/supported.d/local regexp={{ item.locale }} {{ item.encoding }}"
     line: "{{ item.locale }} {{ item.encoding }} create=yes"
   notify:
     - Generate locales
@@ -17,15 +17,16 @@
   become: true
 
 - name: Set localtime (/etc/localtime)
-  copy: 
-    remote_src: yes 
-    src: "/usr/share/zoneinfo/{{ locales_timezone }} "
+  file:
+    src: "/usr/share/zoneinfo/{{ locales_timezone }}"
     dest: "/etc/localtime"
+    state: link
 
 - name: Set timezone (/etc/timezone)
-  copy: 
-    content: "{{ locales_timezone }}\n" 
+  copy:
+    content: "{{ locales_timezone }}\n"
     dest: /etc/timezone
+    mode: u=rw,g=r,o=r
   notify:
     - Update TimeZone data
   become: true
