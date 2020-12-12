@@ -10,3 +10,4 @@
       - perl
       - less
     state: present
+  become: yes

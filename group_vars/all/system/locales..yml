@@ -1,0 +1,8 @@
+---
+#############################
+# Configure locale to France
+#############################
+locales_timezone : "Europe/Paris"
+locales_list:
+  - { locale: "fr_FR.UTF-8", encoding: "UTF-8" }
+  - { locale: "en_US.UTF-8", encoding: "UTF-8" }

@@ -1,0 +1,10 @@
+---
+- name: "Ansible Playbook to run system manager"
+  hosts: laptop
+  gather_facts: true
+
+  vars:
+    home_dir: "{{ lookup('env', 'HOME') }}"
+
+  roles:
+    - name: ptavares.ansible_role_manage_system

@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 # https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem
 addToPATH() {
   case ":$PATH:" in

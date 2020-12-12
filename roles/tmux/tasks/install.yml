@@ -2,10 +2,11 @@
 
 - name: Install tmux and tmuxinator
   package: 
-    name: 
-      - tmux
-      - tmuxinator 
+    name: "{{ item }}"
     state: present
+  with_items:
+    - tmux
+    - tmuxinator
   register: installation
   become: true
 

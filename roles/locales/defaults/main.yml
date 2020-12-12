@@ -1,0 +1,8 @@
+---
+######################################
+# Defaullt locale/timezone
+######################################
+locales_timezone : "Europe/London"
+locales_list:
+  - { locale: "en_US.UTF-8", encoding: "UTF-8" }
+  

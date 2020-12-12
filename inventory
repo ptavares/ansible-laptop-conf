@@ -1,5 +1,6 @@
-[laptop]
+[computer]
 localhost              ansible_connection=local
 
 [all:vars]
+environment=local
 ansible_python_interpreter=/usr/bin/python3

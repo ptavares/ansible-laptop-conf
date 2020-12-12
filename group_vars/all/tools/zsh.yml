@@ -25,6 +25,9 @@ oh_my_zsh_custom_plugins_info:
   - { url: "https://github.com/ptavares/zsh-direnv.git", dir_dest_name: zsh-direnv }
   - { url: "https://github.com/ptavares/zsh-kubectx.git", dir_dest_name: zsh-kubectx }
   - { url: "https://github.com/ptavares/zsh-sdkman.git", dir_dest_name: zsh-sdkman }
+  - { url: "https://github.com/ptavares/zsh-z.git", dir_dest_name: zsh-z }
+  - { url: "https://github.com/ptavares/zsh-auto-update-plugins.git", dir_dest_name: zsh-auto-update-plugins }
+  - { url: "https://github.com/ptavares/zsh-custom-functions.git", dir_dest_name: zsh-custom-functions }
 
 oh_my_zsh_custom_plugins:
   - fzf-zsh
@@ -35,6 +38,9 @@ oh_my_zsh_custom_plugins:
   - zsh-direnv
   - zsh-kubectx
   - zsh-sdkman
+  - zsh-z
+  - zsh-auto-update-plugins
+  - zsh-custom-functions
 
 oh_my_zsh_custom_plugins_command :
   - "$HOME/.oh-my-zsh/custom/plugins/fzf/install --all"

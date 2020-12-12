@@ -29,7 +29,7 @@ function minimalPackage() {
     sudo apt install -y git make
 }
 
-function checkoutRepo() {    
+function checkoutRepo() {
     log " -> Create ${DIR} if not exist"
     cd ~ || exit
     mkdir -p "${DIR}"
@@ -50,6 +50,7 @@ function runBootstrap() {
     make bootstrap
 
     log "Reload profile to update user path..."
+    # shellcheck disable=SC1091
     source /etc/profile
 
     log "Check BootStrap install..."

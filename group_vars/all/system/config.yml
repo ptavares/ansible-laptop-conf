@@ -7,10 +7,23 @@ system_update: true
 system_update_security_only: false
 
 system_packages_install:
+  - build-essential
+  - gcc
+  - git
+  - tig
+  - grep
+  - less
+  - make
+  - nmap
+  - rsync
   - apt-utils
   - wget
   - curl
+  - traceroute
+  - net-tools
   - htop
+  - zip
+  - unzip
   - p7zip-full
   - p7zip-rar
   - dos2unix
@@ -23,6 +36,9 @@ system_packages_install:
   - whois
   - ipcalc
   - pwgen
+  - oathtoll
+  - shellcheck
+  - gomplate
   # -------------------------------------------------
   # Package for system-monitor gnome shell extension
   # -------------------------------------------------
