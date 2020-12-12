@@ -272,10 +272,10 @@ all: bootstrap bootstrap-check run-install non-ansible
 ## ,.-~*´¨¯¨`*·~-.¸-( Help )-,.-~*´¨¯¨`*·~-.¸
 # =================================================
 
-.PHONY: lint
-## Lint all files
-lint:
-	bash scripts/03-lint.sh
+.PHONY: precommit
+## run precommit on all files
+precommit:
+	pre-commit run --all-files
 
 
 .PHONY: test-with-docker
