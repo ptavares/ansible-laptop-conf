@@ -84,10 +84,6 @@ GALAXY=ansible-galaxy install -r $(REQUIREMENTS_DIR)/$(requirements) $(force)
 # ========================================
 # $(warning DEFAULT_PLAYBOOK is $(DEFAULT_PLAYBOOK))
 
-.PHONY: no_targets__ info help build deploy doc
-	no_targets__:
-
-
 .DEFAULT_GOAL := help
 
 # =================================================
